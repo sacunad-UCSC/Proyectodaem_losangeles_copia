@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DAEM - Gestion Extraescolar</title>
+  <link rel="stylesheet" href="/css/estilos.css" />
+</head>
+<body>
+  <div id="app"></div>
+
+  <!-- ================= VISTA: LOGIN ================= -->
+  <div id="vista-login" class="vista oculta">
+    <div class="login-caja">
+      <div class="login-logo">
+        <div class="logo-icono">DA</div>
+        <h1>DAEM</h1>
+        <p>Sistema de Gestion de Actividades Extraescolares</p>
+      </div>
+      <form id="form-login">
+        <label for="login-rut">RUT</label>
+        <input type="text" id="login-rut" placeholder="Ej: 11111111-1" required />
+        <label for="login-clave">Clave</label>
+        <input type="password" id="login-clave" required />
+        <p id="login-error" class="error oculta"></p>
+        <button type="submit" class="btn-primario">Ingresar</button>
+      </form>
+      <div class="login-hint">
+        Usuarios de ejemplo:<br />
+        Admin: <code>11111111-1 / admin123</code><br />
+        Coordinador P. Gonzalez: <code>22222222-2 / coord123</code><br />
+        Coordinador M. Fuentes: <code>33333333-3 / coord123</code><br />
+        Lector / Director (solo lectura): <code>77777777-7 / director123</code>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= APP (post-login) ================= -->
+  <div id="app-dashboard" class="oculta">
+    <div id="overlay-menu" class="overlay-menu"></div>
+    <button id="btn-menu" class="btn-menu" aria-label="Abrir menu">
+      <span class="barra"></span>
+      <span class="barra"></span>
+      <span class="barra"></span>
+    </button>
+    <aside class="sidebar">
+      <div class="sidebar-cabecera">
+        <div class="sidebar-logo">DAEM</div>
+        <button id="btn-cerrar-menu" class="btn-cerrar-menu" aria-label="Cerrar menu">&times;</button>
+      </div>
+      <div id="usuario-actual" class="usuario-actual"></div>
+      <button id="btn-campana-side" class="btn-campana-side oculta" title="Notificaciones del Admin" aria-label="Notificaciones del Admin">
+        <span class="campana-ico">&#128276;</span>
+        <span class="campana-txt">Notificaciones</span>
+        <span class="badge-campana oculta">0</span>
+      </button>
+      <nav id="nav"></nav>
+      <button id="btn-salir" class="btn-salir">Cerrar sesion</button>
+    </aside>
+    <main id="contenido"></main>
+  </div>
+
+  <!-- Plantilla: mensaje basico -->
+  <template id="tpl-mensaje">
+    <div class="seccion">
+      <h2 id="mensaje-titulo"></h2>
+      <div id="mensaje-cuerpo"></div>
+    </div>
+  </template>
+  
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/app.js?v=04"></script>
+</body>
+</html>

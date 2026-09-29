@@ -1,0 +1,31 @@
+{
+  "name": "daem",
+  "version": "1.0.0",
+  "description": "DAEM - Plataforma de gestion de actividades extraprogramaticas (deportivas y artistico/culturales) a nivel comunal",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "seed": "node seed/seed.js",
+    "semgrep": "./.venv/bin/semgrep --config semgrep.yml --error --severity WARNING ."
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^13.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^17.4.2",
+    "express": "^4.21.0",
+    "jsonwebtoken": "^9.0.2",
+    "sweetalert2": "^11.26.25"
+  },
+  "keywords": [
+    "nodejs",
+    "poo",
+    "daem",
+    "deporte",
+    "cultura",
+    "educacion"
+  ],
+  "author": "Estudiante",
+  "license": "MIT"
+}

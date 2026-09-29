@@ -1,0 +1,28 @@
+rules:
+  - id: javascript-eval
+    languages: [javascript]
+    message: "Evite eval() porque ejecuta codigo arbitrario y puede introducir vulnerabilidades." 
+    severity: ERROR
+    pattern: eval(...)
+
+  - id: javascript-innerhtml
+    languages: [javascript]
+    message: "Revise las asignaciones a innerHTML para evitar inyeccion de contenido no sanitizado."
+    severity: WARNING
+    pattern: "$OBJ.innerHTML = $VAL"
+
+  - id: javascript-document-write
+    languages: [javascript]
+    message: "document.write() puede inyectar contenido sin control y debe evitarse."
+    severity: WARNING
+    pattern: document.write(...)
+
+paths:
+  include:
+    - "**/*.js"
+    - "**/*.html"
+  exclude:
+    - "node_modules/**"
+    - ".git/**"
+    - "data/**"
+    - "public/vendor/**"
